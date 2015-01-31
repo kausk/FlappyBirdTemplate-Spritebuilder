@@ -20,6 +20,13 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     // define variables here;
     Character* character;
     CCPhysicsNode* physicsNode;
+    
+    float timeSinceObstacle;
+    timeSinceObstacle = 0.0f;
+    
+    
+    
+    
 }
 
 -(void) initialize;
