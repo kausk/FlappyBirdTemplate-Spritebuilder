@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     float timeSinceObstacle;
     timeSinceObstacle = 0.0f;
     
+
     
     
     
