@@ -9,7 +9,37 @@
 #import "MainScene.h"
 #import "Obstacle.h"
 
+
+@interface CGPointObject : NSObject {//hidden inside CCparallaxnode
+    
+    CGPoint _ratio;
+    CGPoint _offset;
+    CCNode *__unsafe_unretained_child;//weak ref
+    
+}
+@property (nonatomic, readwrite) CGPoint ratio;
+@property (nonatomic, readwrite) CGPoint offset;
+@property (nonatomic, readwrite, unsafe_unretained) CCNode *child;
+//include outline for pointobject
+//xc doesnt throw errors later
++(id) pointWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
+-(id) initWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
+@end
+
+
 @implementation MainScene {
+    
+    CGPoint _cloudParallaxRatio;
+    CGPoint _bushParallaxRatio;
+    //declare parallax ratios for clouds and bushes
+    //ratio of (1,1) means they move normally in x and y
+    
+    //only moving x
+    //clouds are farther away, should be moving slower
+    //give it a lower x value
+    CCNode *_parallaxContainer;
+    CCParallaxNode *_parallaxBackground;
+    
     CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
@@ -49,6 +79,7 @@
     
     _clouds = @[_cloud1, _cloud2];
     _bushes = @[_bush1, _bush2];
+    
     //arrays of clouds and bushes
     
 
