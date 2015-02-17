@@ -265,7 +265,6 @@
     
     
         
-    }
     
     NSMutableArray *offScreenObstacles = nil;
     
