@@ -207,7 +207,7 @@
         [character.physicsBody applyAngularImpulse:-40000.f*delta];
     }
     
-    physicsNode.position = ccp(physicsNode.position.x - (character.physicsBody.velocity.x * delta), physicsNode.position.y);
+    //physicsNode.position = ccp(physicsNode.position.x - (character.physicsBody.velocity.x * delta), physicsNode.position.y);
     
     _parallaxBackground.position = ccp(_parallaxBackground.position.x - (character.physicsBody.velocity.x*delta), _parallaxBackground.position.y);
     
@@ -264,7 +264,7 @@
     }
     
     
-        
+    
     
     NSMutableArray *offScreenObstacles = nil;
     
